@@ -1,6 +1,7 @@
 package cs208;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -32,6 +33,25 @@ public class PracticeController
 
 
     // TODO: create a GET route with a path parameter
+    // NOTE:
+    //   - {issue_id} is a PathVariable (i.e., path parameter), not a RequestParam (i.e., query parameter)
+    //   - any value after "/issues_with_string_path_variable/" that is passed in the URL will be assigned to the {issue_id} variable
+    @GetMapping("/user/{user_name}/profile")
+    String getPersonWithStringPathVariableCalledUserName(@PathVariable("user_name") String user_name)
+    {
+        System.out.println("PracticeController.getPersonWithStringPathVariableCalledUserName - START");
+        System.out.println("Parameter received in the path of the URL:");
+        System.out.println("user_name = " + user_name);
+        System.out.println("PracticeController.getPersonWithStringPathVariableCalledUserName - END");
+
+        String valueReturnedToBrowser =
+                "Parameter received in the path of the URL:<br>" +
+                        "user_name = " + user_name + "<br><br>" +
+                        "<hr>";
+                        //"Find me in the TutorialController.getIssuesWithStringPathVariableCalledIssueId() method";
+
+        return valueReturnedToBrowser;
+    }
 
 
     // TODO: create a POST route with two form parameters

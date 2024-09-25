@@ -301,7 +301,7 @@ public class TutorialController
     // NOTE:
     //   - {issue_id} is a PathVariable (i.e., path parameter), not a RequestParam (i.e., query parameter)
     //   - any value after "/issues_with_string_path_variable/" that is passed in the URL will be assigned to the {issue_id} variable
-    @GetMapping("/issues_with_string_path_variable/{issue_id}")
+   /* @GetMapping("/issues_with_string_path_variable/{issue_id}")
     String getIssuesWithStringPathVariableCalledIssueId(@PathVariable("issue_id") String issue_id)
     {
         System.out.println("TutorialController.getIssuesWithStringPathVariableCalledIssueId - START");
@@ -316,7 +316,7 @@ public class TutorialController
             "Find me in the TutorialController.getIssuesWithStringPathVariableCalledIssueId() method";
 
         return valueReturnedToBrowser;
-    }
+    }*/
 
 
     // Try all these URLs:
