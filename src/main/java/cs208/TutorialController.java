@@ -446,7 +446,7 @@ public class TutorialController
     //      description = description of the new issue
     //
     // POST /issues
-    @PostMapping("/issues")
+    /*@PostMapping("/issues")
     String postIssuesWithTwoFormParameters(
             @RequestParam("title") String title,
             @RequestParam("description") String description
@@ -467,7 +467,7 @@ public class TutorialController
             "Find me in the TutorialController.postIssuesWithTwoFormParameters() method";
 
         return valueReturnedToClient;
-    }
+    }*/
 
 
     // POST

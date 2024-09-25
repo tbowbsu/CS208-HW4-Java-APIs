@@ -1,9 +1,6 @@
 package cs208;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class PracticeController
@@ -55,6 +52,35 @@ public class PracticeController
 
 
     // TODO: create a POST route with two form parameters
+    // POST
+    //      http://localhost:8080/issues
+    // with the following form parameters:
+    //      title = title for the new issue
+    //      description = description of the new issue
+    //
+    // POST /issues
+    @PostMapping("/create_user")
+    String postNameWithTwoFormParameters(
+            @RequestParam("first_name") String firstName,
+            @RequestParam("last_name") String lastName
+    )
+    {
+        System.out.println("PracticeController.postWithTwoFormParameters - START");
+        System.out.println("Parameters received in the body of the POST request:");
+        System.out.println("first name = " + firstName);
+        System.out.println("last name = " + lastName);
+        System.out.println("PracticeController.postWithTwoFormParameters - END");
+
+        String valueReturnedToClient =
+                "Parameters received in the body of the POST request:\n" +
+                        "first name = " + firstName + "\n" +
+                        "last name = " + lastName + "\n\n" +
+                        "This REST API route would create a new issue with the title and description specified in the parameters.\n\n" +
+                        "<hr>";
+                        //"Find me in the TutorialController.postIssuesWithTwoFormParameters() method";
+
+        return valueReturnedToClient;
+    }
 
 
     // TODO: create a PATCH route
