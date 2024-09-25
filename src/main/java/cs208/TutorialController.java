@@ -93,7 +93,7 @@ public class TutorialController
 
     // http://localhost:8080/search_with_two_parameters?parameter1=value1&parameter2=value2
     // GET /search_with_two_parameters?parameter1=value1&parameter2=value2
-    @GetMapping("/search_with_two_parameters")
+    /*@GetMapping("/search_with_two_parameters")
     String getSearchWithTwoParameters(
             @RequestParam("parameter1") String parameter1,
             @RequestParam("parameter2") String parameter2
@@ -113,7 +113,7 @@ public class TutorialController
             "Find me in the TutorialController.getSearchWithTwoParameters() method";
 
         return valueReturnedToBrowser;
-    }
+    }*/
 
 
     // The following URLs are equivalent:
