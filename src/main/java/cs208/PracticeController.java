@@ -2,6 +2,8 @@ package cs208;
 
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Random;
+
 @RestController
 public class PracticeController
 {
@@ -125,8 +127,8 @@ public class PracticeController
     )
     {
         //System.out.println("PracticeController.deleteIssuesWithOnePathVariable - START");
-        System.out.println("Parameter received in the path of the URL:");
-        System.out.println("issue_id = " + resource_id);
+        System.out.println("Deleted:");
+        System.out.println("resource_id = " + resource_id);
         System.out.println("Form Parameter received in the body of the DELETE request:");
         System.out.println("authentication_token = " + authentication_token);
        // System.out.println("PracticeController.deleteIssuesWithOnePathVariable - END");
@@ -144,5 +146,17 @@ public class PracticeController
 
 
     // TODO: create a GET API that returns a random resource
+    @GetMapping("/api/random_character")
+    String getIndex()
+    {
+        String[] list = {"Sylvanas Windrunner","Anduin Wrynn","Varian Wrynn","Baine Bloodhoof","Garrosh Hellscream","Genn Greymane","Alleria Windrunner","Anduin Lothar","Katrana Prestor","The Jailer"};
+        Random rand = new Random();
+        int n = rand.nextInt(list.length);
+
+        System.out.println("Randomly selected " + list[n]);
+        return "Your random Warcraft character is " + list[n];
+
+
+    }
 
 }
