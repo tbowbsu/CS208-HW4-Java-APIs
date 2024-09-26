@@ -74,9 +74,7 @@ public class PracticeController
         String valueReturnedToClient =
                 "Parameters received in the body of the POST request:\n" +
                         "first name = " + firstName + "\n" +
-                        "last name = " + lastName + "\n\n" +
-                        "This REST API route would create a new issue with the title and description specified in the parameters.\n\n" +
-                        "<hr>";
+                        "last name = " + lastName + "\n\n";
                         //"Find me in the TutorialController.postIssuesWithTwoFormParameters() method";
 
         return valueReturnedToClient;
@@ -84,6 +82,36 @@ public class PracticeController
 
 
     // TODO: create a PATCH route
+    //PATCH
+    //      http://localhost:8080/issues/123
+    // with the following form parameters:
+    //      title = this is the only field that should be updated in the issue
+    //
+    // PATCH /issues/{issue_id}
+    @PatchMapping("/user/{yourBSUUsername}/update_profile")
+    String patchWithOnePathVariableAndTwoFormParameters(
+            @PathVariable("yourBSUUsername") String userName,
+            @RequestParam("theme") String theme,
+            @RequestParam("language_code") String languageCode
+    )
+    {
+        //System.out.println("TutorialController.patchIssuesWithOnePathVariableAndOneFormParameter - START");
+        System.out.println("Parameter received in the path of the URL:");
+        System.out.println("yourBSUUsername = " + userName);
+        System.out.println("Parameters received in the body of the PATCH request:");
+        System.out.println("theme    = " + theme);
+        System.out.println("language code = " + languageCode);
+        //System.out.println("TutorialController.patchIssuesWithOnePathVariableAndOneFormParameter - END");
+
+        String valueReturnedToClient =
+                "Parameter received in the path of the URL:\n" +
+                        "yourBSUUSername = " + userName + "\n\n" +
+                        "Parameters received in the body of the PATCH request:\n" +
+                        "theme    = " + theme + "\n\n" +
+                        "language code = " + languageCode;
+
+        return valueReturnedToClient;
+    }
 
 
     // TODO: create a DELETE route

@@ -550,7 +550,7 @@ public class TutorialController
     //      title = this is the only field that should be updated in the issue
     //
     // PATCH /issues/{issue_id}
-    @PatchMapping("/issues/{issue_id}")
+   /* @PatchMapping("/issues/{issue_id}")
     String patchIssuesWithOnePathVariableAndOneFormParameter(
             @PathVariable("issue_id") String issue_id,
             @RequestParam("title") String title
@@ -574,7 +574,7 @@ public class TutorialController
             "Find me in the TutorialController.patchIssuesWithOnePathVariableAndOneFormParameter() method";
 
         return valueReturnedToClient;
-    }
+    }*/
 
 
     // http://localhost:8080/what_is_the_difference_between_put_and_patch
