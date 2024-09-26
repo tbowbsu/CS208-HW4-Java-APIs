@@ -115,6 +115,32 @@ public class PracticeController
 
 
     // TODO: create a DELETE route
+    // DELETE http://localhost:8080/issues/123
+    //
+    // DELETE /issues/{issue_id}
+    @DeleteMapping("/resource/{resourceId}")
+    String deleteIssuesWithOnePathVariable(
+            @PathVariable("resourceId") String resource_id,
+            @RequestParam("authentication_token") String authentication_token
+    )
+    {
+        //System.out.println("PracticeController.deleteIssuesWithOnePathVariable - START");
+        System.out.println("Parameter received in the path of the URL:");
+        System.out.println("issue_id = " + resource_id);
+        System.out.println("Form Parameter received in the body of the DELETE request:");
+        System.out.println("authentication_token = " + authentication_token);
+       // System.out.println("PracticeController.deleteIssuesWithOnePathVariable - END");
+
+        String valueReturnedToClient =
+                "Parameter received in the path of the URL:\n" +
+                        "resource_id = " + resource_id + "\n\n" +
+                        "This REST API route would delete the resource with id " + resource_id +
+                        " and token " + authentication_token + ".\n\n" +
+                        "<hr>";
+                        //"Find me in the TutorialController.deleteIssuesWithOnePathVariable() method";
+
+        return valueReturnedToClient;
+    }
 
 
     // TODO: create a GET API that returns a random resource

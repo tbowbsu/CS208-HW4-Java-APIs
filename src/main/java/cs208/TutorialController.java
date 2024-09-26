@@ -594,7 +594,7 @@ public class TutorialController
     // DELETE http://localhost:8080/issues/123
     //
     // DELETE /issues/{issue_id}
-    @DeleteMapping("/issues/{issue_id}")
+   /* @DeleteMapping("/issues/{issue_id}")
     String deleteIssuesWithOnePathVariable(@PathVariable("issue_id") String issue_id)
     {
         System.out.println("TutorialController.deleteIssuesWithOnePathVariable - START");
@@ -610,7 +610,7 @@ public class TutorialController
             "Find me in the TutorialController.deleteIssuesWithOnePathVariable() method";
 
         return valueReturnedToClient;
-    }
+    }*/
 
 
     // DELETE http://localhost:8080/issues/123/comments/456
